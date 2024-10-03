@@ -1,0 +1,15 @@
+# Import numpy and set seed
+import numpy as np
+np.random.seed(123)
+
+# Generate and print random float
+#simple check
+print(np.random.rand())
+
+#randint() generates a random integer value
+# Use randint() to simulate a dice
+print(np.random.randint(1,7))
+
+# Use randint() again to check if you get the same value
+print(np.random.randint(1,7))
+
