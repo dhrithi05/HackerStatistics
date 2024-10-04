@@ -27,3 +27,24 @@ you can just as well use randint(), also a function of the random package, to ge
 np.random.randint(4, 8)**
 
 In the Empire State Building bet, your next move depends on the number you get after throwing the dice. We can perfectly code this with an if-elif-else construct!
+
+Additional understanding
+all_walks is a list of lists: every sub-list represents a single random walk. If you convert this list of lists to a NumPy array, you can start making interesting plots! matplotlib.pyplot is already imported as plt.
+
+Use np.array() to convert all_walks to a NumPy array, np_aw.
+Try to use plt.plot() on np_aw. Also include plt.show(). Does it work out of the box?
+Transpose np_aw by calling np.transpose() on np_aw. Call the result np_aw_t. Now every row in np_all_walks represents the position after 1 throw for the five random walks.
+Use plt.plot() to plot np_aw_t; also include a plt.show(). Does it look better this time?
+
+
+Taking clumsiness into consideration. ie, the chances of falling down
+You're a bit clumsy and you have a 0.5% chance of falling down. That calls for another random number generation. Basically, you can generate a random float between 0 and 1. If this value is less than or equal to 0.005, you should reset step to 0. use np.random.rand()
+
+To make sure we've got enough simulations, go crazy. Simulate the random walk 500 times.
+From np_aw_t, select the last row. This contains the endpoint of all 500 random walks you've simulated. Store this NumPy array as ends.
+Use plt.hist() to build a histogram of ends. Don't forget plt.show() to display the plot.
+
+
+The histogram of the previous exercise was created from a NumPy array ends, that contains 500 integers. Each integer represents the end point of a random walk. To calculate the chance that this end point is greater than or equal to 60, you can count the number of integers in ends that are greater than or equal to 60 and divide that number by 500, the total number of simulations.
+
+Well then, what's the estimated chance that you'll reach at least 60 steps high if you play this Empire State Building game? 
